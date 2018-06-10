@@ -9,19 +9,22 @@ $(".carousel").carousel({
 $(function() {
   $.scrollify({
     section : ".fixHeight",
+    // easing: "linear",
+    scrollSpeed: 1100,
     before:function(i,sections) {
       $('.small_nav').find('a').css("backgroundColor", "#fff");
       $(sections[i]).find(".opacity0").animate({ opacity: 0,scale:0}, 0);
       $(sections[i]).find(".h3_title").stop().animate({ opacity: 0,scale:0.5}, 0);
       $(sections[i]).find(".h3_title").css({ transform: "scale(0,0)", transition: "0s" });
       $(sections[i]).find(".text_color").animate({ opacity: 0,scale:0,color:'#000'}, 0);
-    },
-    after:function(i,sections) {
+
+
+      //after 400,600,800,1000
       $('.small_nav').find('a').eq(i).css("backgroundColor", "#ccc");
-      $(sections[i]).find(".title_1").stop().animate({ opacity: 1,scale:1}, 400);
-      $(sections[i]).find(".title_2").stop().animate({ opacity: 1,scale:1}, 600);
-      $(sections[i]).find(".title_3").stop().animate({ opacity: 1,scale:1}, 800);
-      $(sections[i]).find(".title_4").stop().animate({ opacity: 1,scale:1}, 1000);
+      $(sections[i]).find(".title_1").stop().animate({ opacity: 1,scale:1}, 1600);
+      $(sections[i]).find(".title_2").stop().animate({ opacity: 1,scale:1}, 2400);
+      $(sections[i]).find(".title_3").stop().animate({ opacity: 1,scale:1}, 2600);
+      $(sections[i]).find(".title_4").stop().animate({ opacity: 1,scale:1}, 3000);
       $(sections[i]).find(".function1").stop().animate({ opacity: 1,scale:1}, 1000);
       $(sections[i]).find(".arrow1").stop().animate({ opacity: 1,scale:1}, 1200);
       $(sections[i]).find(".function2").stop().animate({ opacity: 1,scale:1}, 1400);
@@ -43,6 +46,9 @@ $(function() {
           $(sections[i]).find(".text_color").css({ transform: "scale(1.1,1.1)", transition: "0.2s" });
        
       });
+    },
+    after:function(i,sections) {
+      
     },
   });
 });
@@ -104,7 +110,7 @@ for(var i=0;i<$('.nav_item').length;i++){
   console.log($('.nav_item').eq(i).attr("mark"));
   console.log($('.nav_item').eq(i))
   if($('.nav_item').eq(i).attr("mark")==array[2]){
-    
+    $('.nav_item').eq(i).unbind("mouseleave"); //移除mouselesve
     $('.nav_item').eq(i).find('.line').stop().animate({ width:'100px',opacity:1}, 200)
   }
 }
@@ -375,7 +381,7 @@ $(document).ready(function() {
 })
 
   var W = $(window).width()+'px';
-var H = $(window).width()+'px';
+  var H = $(window).width()+'px';
   $('.y-header .child_nav_2').css("width",W)
   console.log($(window).width()+'px')
 

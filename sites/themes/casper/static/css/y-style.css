@@ -472,7 +472,7 @@ h6 {
 .y-character,
 .y-smartIo,
 .y-report {
-  width: 891px;
+  /* width: 891px; */
   margin: 0 auto 40px;
 }
 .y-character img {
@@ -1363,7 +1363,7 @@ margin-top: 15px;
   text-align: center;
   margin-bottom: 30px;
   margin-top: 20px;
-  width: 420px;
+  width: 450px;
   
 }
 .submit button {
@@ -1374,7 +1374,7 @@ margin-top: 15px;
   border-radius: 4px;
   color: #fff;
   margin-top: 20px;
-  width: 440px;
+  width: 450px;
   height: 40px;
   /* line-height: 40px; */
   
@@ -1740,4 +1740,9 @@ width: 1000px;
   margin: 0;
   margin-top: 10px;
 
+}
+
+/* 滚屏隔屏变色 */
+.fixHeight:nth-child(even) {
+  background-color: #f2f2f2;
 }
